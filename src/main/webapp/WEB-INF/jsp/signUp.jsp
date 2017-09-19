@@ -57,6 +57,15 @@ footer {
 					<li><a href="<spring:url value="lectureList" />"> </span>  Agenda</a></li>
 					<li><a href="<spring:url value="sponsors" />"> </span>  Sponsorzy</a></li>
 					<li><a href="<spring:url value="contact" />"> </span>  Kontakt</a></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#">Admin panel <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#"></a></li>
+							<li><a href="<spring:url value="/addSpeaker" />"> </span>  Dodaj prelegenta </a></li>
+							<li><a href="<spring:url value="/addLecture" />"> </span>  Dodaj wykład </a></li>
+							<li><a href="<spring:url value="/userList" />"> </span>  Lista uczestników </a></li>
+						</ul>
+					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="<spring:url value="/signUp" />"><span class="glyphicon glyphicon-user">   </span>  Zarejestruj sie</a></li>
@@ -145,6 +154,15 @@ footer {
 						<form:errors path="userStatus" />
 					</div> 
 				</div>
+				
+				<%-- <div class="form-group">
+					<label class="control-label col-lg-2" for="lectureListForUser">Prelegent</label>
+					<div class="col-lg-10">
+						<div class="form:input-prepend">
+							<form:select multiple="true" path="lectureListForUser" items="${lectures}" value="lecture" />
+						<div class="form:input-prepend">
+					</div>
+				</div> --%>
 				
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">

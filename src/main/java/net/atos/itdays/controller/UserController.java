@@ -33,6 +33,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
 	public String getAddNewUserForm(Model model){
+//		model.addAttribute("lectures", lectureRepository.findAll());
 		User newUser = new User();
 		model.addAttribute("newUser", newUser);
 		return "signUp";
