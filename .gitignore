@@ -1,0 +1,15 @@
+.classpath
+.war
+.jar
+.war.original
+.lst
+.properties
+.project
+.settings
+.springBeans
+.idea
+*.iml
+*.txt
+*.log
+bin
+target
