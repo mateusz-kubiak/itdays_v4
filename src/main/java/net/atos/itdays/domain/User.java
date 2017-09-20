@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -38,6 +39,22 @@ public class User {
     private UserStatus userStatus;
     
     private Timestamp creationDate;
+    
+    @OneToMany
+	private List<Lecture> prelections;
+	
+
+	public List<Lecture> getPrelections() {
+		return prelections;
+	}
+
+	public void setPrelections(List<Lecture> prelections) {
+		this.prelections = prelections;
+	}
+	
+	public boolean addPrelection(Lecture lecture){
+		return prelections.add(lecture);
+	}
     
 	public Long getUserId() {
 		return userId;

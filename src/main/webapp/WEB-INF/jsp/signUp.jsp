@@ -84,14 +84,6 @@ footer {
 	</div>
 
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	<section class="container">
 		<form:form  modelAttribute="newUser" class="form-horizontal">
 			<fieldset>
@@ -155,14 +147,14 @@ footer {
 					</div> 
 				</div>
 				
-				<%-- <div class="form-group">
-					<label class="control-label col-lg-2" for="lectureListForUser">Prelegent</label>
+				<div class="form-group">
+					<label class="control-label col-lg-2" for="prelections">Prelekcje</label>
 					<div class="col-lg-10">
 						<div class="form:input-prepend">
-							<form:select multiple="true" path="lectureListForUser" items="${lectures}" value="lecture" />
+							<form:select path="prelections" items="${lectures}" value="prelections" multiple="true" itemLabel="topic"  />
 						<div class="form:input-prepend">
 					</div>
-				</div> --%>
+				</div>
 				
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">

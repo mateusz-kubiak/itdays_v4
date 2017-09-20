@@ -1,5 +1,7 @@
 package net.atos.itdays.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 @Entity 
@@ -27,6 +30,19 @@ public class Lecture {
 	
 	@Transient
 	private String stringDate;
+	
+	@Transient
+	private String lectureDescription;
+	
+	
+	public String getLectureDescription() {
+		lectureDescription = topic + ", wykładowca: " + speaker.getFullName();
+		return lectureDescription;
+	}
+
+	public void setLectureDescription(String lectureDescription) {
+		this.lectureDescription = lectureDescription;
+	}
 
 	public Long getLectureId() {
 		return lectureId;
