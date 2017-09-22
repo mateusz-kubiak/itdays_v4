@@ -1,7 +1,9 @@
 package net.atos.itdays.controller;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import net.atos.itdays.domain.Lecture;
 import net.atos.itdays.domain.User;
 import net.atos.itdays.domain.repository.LectureRepository;
 import net.atos.itdays.domain.repository.UserRepository;
@@ -46,8 +49,14 @@ public class UserController {
 		if(result.hasErrors()){
 			return "signUp";
 		}
+		
 		java.sql.Timestamp registrationDate = new Timestamp(Calendar.getInstance().getTimeInMillis());
 		newUser.setCreationDate(registrationDate);
+		
+//		for(Lecture lecture : newUser.getPrelections()){
+//			lecture.getListOfusers().add(newUser);
+//		}
+		
 		userRepository.save(newUser); 
 		LOG.info("POST request to create new user was submitted: " + newUser);
 		return "redirect:/signUp";
@@ -55,7 +64,7 @@ public class UserController {
 	
 	@InitBinder
 	public void initialiseBinder(WebDataBinder binder){
-		binder.setAllowedFields("userId", "firstName","lastName","email","phone","userStatus");
+		binder.setAllowedFields("userId", "firstName","lastName","email","phone","userStatus", "prelections");
 	}
 	
 	@GetMapping(path="/userList")

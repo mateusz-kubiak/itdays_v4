@@ -1,5 +1,6 @@
 package net.atos.itdays.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
@@ -34,7 +36,22 @@ public class Lecture {
 	@Transient
 	private String lectureDescription;
 	
+	@ManyToMany(mappedBy="prelections")
+	private List<User> listOfusers = new ArrayList<User>();
 	
+	
+	public boolean addUser(User user){
+		return listOfusers.add(user);
+	}
+
+	public List<User> getListOfusers() {
+		return listOfusers;
+	}
+
+	public void setListOfusers(List<User> listOfusers) {
+		this.listOfusers = listOfusers;
+	}
+
 	public String getLectureDescription() {
 		lectureDescription = topic + ", wykładowca: " + speaker.getFullName();
 		return lectureDescription;

@@ -1,13 +1,17 @@
 package net.atos.itdays.domain;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
@@ -40,10 +44,11 @@ public class User {
     
     private Timestamp creationDate;
     
-    @OneToMany
-	private List<Lecture> prelections;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name="user_prelections", joinColumns={@JoinColumn(name="USER_ID")}, inverseJoinColumns={@JoinColumn(name="LECTURE_ID")})
+	private List<Lecture> prelections = new ArrayList<>();
 	
-
+	
 	public List<Lecture> getPrelections() {
 		return prelections;
 	}

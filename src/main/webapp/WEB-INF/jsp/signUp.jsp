@@ -153,6 +153,7 @@ footer {
 						<div class="form:input-prepend">
 							<form:select path="prelections" items="${lectures}" value="prelections" multiple="true" itemLabel="topic"  />
 						<div class="form:input-prepend">
+						
 					</div>
 				</div>
 				

@@ -144,6 +144,14 @@ footer {
 				</div>
 			</fieldset>
 		</form:form>
+		<%-- To display selected value from dropdown list. --%>
+<%--      <% 
+                String s=request.getParameter("clr");
+                if (s !=null)
+                {
+                    out.println("Selected Color is : "+s);
+                }
+      %> --%>
 	</section>
 	
 	

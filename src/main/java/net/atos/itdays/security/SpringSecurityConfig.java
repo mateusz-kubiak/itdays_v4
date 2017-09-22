@@ -38,8 +38,8 @@ public class SpringSecurityConfig { //extends WebSecurityConfigurerAdapter {
 //    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 //
 //        auth.inMemoryAuthentication()
-//                .withUser("reader").password("password").roles("READER")
+//                .withUser("reader").password("reader01").roles("READER")
 //                .and()
-//                .withUser("admin").password("password").roles("ADMIN");
+//                .withUser("admin").password("admin01").roles("ADMIN");
 //    }
 }
