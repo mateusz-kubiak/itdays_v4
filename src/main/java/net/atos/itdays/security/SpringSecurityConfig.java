@@ -12,6 +12,9 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
+	@Autowired
+    private AccessDeniedHandler accessDeniedHandler;
+	
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
@@ -28,7 +31,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 					.permitAll()
 					.and()
                 .logout()
-					.permitAll();
+					.permitAll()
+					.and()
+	            .exceptionHandling().accessDeniedHandler(accessDeniedHandler);
     }
 
     @Autowired

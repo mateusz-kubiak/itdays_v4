@@ -84,10 +84,8 @@ footer {
 						</ul></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="<spring:url value="/signUp" />"><span
-							class="glyphicon glyphicon-user"> </span> Zarejestruj sie</a></li>
-					<li><a href="<spring:url value="/login"  />"><span
-							class="glyphicon glyphicon-log-in"> </span> Zaloguj sie </a></li>
+					<li><a href="<spring:url value="/signUp" />"><span class="glyphicon glyphicon-user"> </span> Zarejestruj się</a></li>
+					<li><a href="<spring:url value="/login"  />"><span class="glyphicon glyphicon-log-in"> </span> Zaloguj się </a></li>
 				</ul>
 			</div>
 		</div>
@@ -128,7 +126,7 @@ footer {
 
 						<c:url value="/login" var="loginUrl" />
 						<form action="${loginUrl}" method="post">
-							<c:if test="${param.error != null}"> <p>Invalid username and password.</p> </c:if>
+							<c:if test="${param.error != null}"> <p>Niepawidłowy login lub hasło. Spróbuj ponownie.</p> </c:if>
 							<c:if test="${param.logout != null}">
 								<p>You have been logged out.</p>
 							</c:if>

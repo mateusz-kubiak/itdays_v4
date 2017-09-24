@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -53,5 +54,10 @@ public class HomeController {
 		model.addAttribute("eventDate","22 - 23 listpad 2017 r.");
 		return "signUp";
 	}
+	
+	@GetMapping("/403")
+    public String errorPage() {
+        return "/error";
+    }
 	
 }

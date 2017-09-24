@@ -64,8 +64,8 @@ footer {
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="<spring:url value="/signUp" />"><span class="glyphicon glyphicon-user">   </span>  Zarejestruj sie</a></li>
-					<li><a href="<spring:url value="/login"  />"><span class="glyphicon glyphicon-log-in"> </span> Zaloguj sie     </a></li>
+					<li><a href="<spring:url value="/signUp" />"><span class="glyphicon glyphicon-user">   </span>  Zarejestruj się</a></li>
+					<li><a href="<spring:url value="/login"  />"><span class="glyphicon glyphicon-log-in"> </span> Zaloguj się     </a></li>
 				</ul>
 			</div>
 		</div>
@@ -75,7 +75,8 @@ footer {
 		<div class="container text-center">
 			<h1>${eventName}</h1>
 			<p>${eventDate}</p>
-			<p>Wystąpił nieoczekiwany błąd. Prosimy o kontakt z administratorem.</p>
+			<p>Tylko konto z rolą administratora ma uprawnienia do oglądania treści na tej stronie.</p>
+			<p>Przepraszamy za kłopot.</p>
 		</div>
 	</div>
 
