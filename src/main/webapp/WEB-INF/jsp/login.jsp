@@ -126,9 +126,10 @@ footer {
 
 						<c:url value="/login" var="loginUrl" />
 						<form action="${loginUrl}" method="post">
-							<c:if test="${param.error != null}"> <p>Niepawidłowy login lub hasło. Spróbuj ponownie.</p> </c:if>
+							<c:if test="${param.error != null}"> 
+								<p>Niepawidłowy login lub hasło. Spróbuj ponownie.</p> </c:if>
 							<c:if test="${param.logout != null}">
-								<p>You have been logged out.</p>
+								<p>Wylogowałeś się.</p>
 							</c:if>
 							<p> 
 								<label for="username">Login</label> 

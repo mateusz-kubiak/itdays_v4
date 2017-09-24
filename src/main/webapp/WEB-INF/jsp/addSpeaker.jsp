@@ -69,7 +69,7 @@ footer {
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="<spring:url value="/signUp" />"><span class="glyphicon glyphicon-user">   </span>  Zarejestruj się</a></li>
-					<li><a href="<spring:url value="/logout"  />"><span class="glyphicon glyphicon-log-in"> </span> Zaloguj się     </a></li>
+					<li><a href="<spring:url value="/logout"  />"><span class="glyphicon glyphicon-log-in"> </span> Wyloguj się     </a></li>
 				</ul>
 			</div>
 		</div>
